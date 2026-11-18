@@ -1,0 +1,194 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPL Data Analysis Overview (2008–2024)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --navy-950: #070d1e;
+    --navy-900: #0a1128;
+    --ink: #0f172a;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --shadow-md: 0 4px 14px -1px rgba(15, 23, 42, 0.07);
+    --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.12);
+    --radius-md: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  header {
+    background: linear-gradient(135deg, #070d1e 0%, #0f1c3f 50%, #172554 100%);
+    color: #ffffff;
+    padding: 32px 36px 28px;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .header-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: #fbbf24;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    margin-bottom: 6px;
+  }
+  .header-desc { color: #94a3b8; font-size: 14px; }
+  .header-actions { display: flex; gap: 12px; align-items: center; }
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #1a73e8, #2563eb);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    transition: all 0.2s ease;
+  }
+  .nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+  }
+  .banner-nav {
+    max-width: 1600px;
+    margin: 20px auto 0;
+    padding: 0 36px;
+  }
+  .banner-card {
+    background: #ffffff;
+    border: 1px solid #bfdbfe;
+    border-left: 5px solid #2563eb;
+    border-radius: 12px;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+  }
+  .banner-card p {
+    font-size: 13.5px;
+    color: #1e3a8a;
+    font-weight: 600;
+  }
+  .banner-card a {
+    color: #2563eb;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .chart-container {
+    max-width: 1600px;
+    margin: 20px auto 36px;
+    padding: 0 36px;
+  }
+  .chart-card {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+  footer {
+    background: var(--navy-950);
+    color: #94a3b8;
+    padding: 28px 36px;
+    font-size: 12.5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .footer-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  footer code {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f1f5f9;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  @media (max-width: 640px) {
+    header, .banner-nav, .chart-container, footer { padding-left: 20px; padding-right: 20px; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="header-badge">📊 Comprehensive Overview • All 17 Seasons</div>
+      <h1>IPL Data Analysis — Master Overview</h1>
+      <div class="header-desc">Complete 8-panel analytical overview across 1,095 matches and 260,920 balls (2008–2024).</div>
+    </div>
+    <div class="header-actions">
+      <a href="dashboard.html" class="nav-btn">⚡ Interactive Dashboard & Filters ↗</a>
+    </div>
+  </div>
+</header>
+
+<div class="banner-nav">
+  <div class="banner-card">
+    <p>💡 You are viewing the static master overview of all 17 seasons. Looking to filter by individual teams, season ranges, or venues?</p>
+    <a href="dashboard.html">Switch to Interactive Dashboard →</a>
+  </div>
+</div>
+
+<div class="chart-container">
+  <div class="chart-card">
+    <div style="height:1900px; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-4.1.1.min.js" integrity="sha256-O24V1F27f8pb0glCkelh3cVHLNiHAJ5gCaVtq2aNch8=" crossorigin="anonymous"></script>                <div id="7cbf9d8a-689a-42cd-b2db-1ade6f16bdd1" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("7cbf9d8a-689a-42cd-b2db-1ade6f16bdd1")) {                    Plotly.newPlot(                        "7cbf9d8a-689a-42cd-b2db-1ade6f16bdd1",                        [{"cliponaxis":false,"customdata":[[12,46],[29,75],[6,14],[13,30],[112,246],[115,252],[123,255],[88,182],[15,30],[112,221],[131,251],[24,44],[144,261],[138,238],[28,45]],"hovertemplate":"%{y}\u003cbr\u003eWin %: %{x:.1f}%\u003cbr\u003e%{customdata[0]} wins in %{customdata[1]} matches\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["#c0392b","#c0392b","#c0392b","#c0392b","#c0392b","#c0392b","#c0392b","#c0392b","#1a6eb5","#1a6eb5","#1a6eb5","#1a6eb5","#1a6eb5","#1a6eb5","#1a6eb5"]},"orientation":"h","text":["26.1%","38.7%","42.9%","43.3%","45.5%","45.6%","48.2%","48.4%","50.0%","50.7%","52.2%","54.5%","55.2%","58.0%","62.2%"],"textposition":"outside","x":{"dtype":"f8","bdata":"IQtZyEIWOkBVVVVVVVVDQNu2bdu2bUVAq6qqqqqqRUDDRjpspMNGQBRFURRF0UZAHh4eHh4eSEDQAi3QAi1IQAAAAAAAAElAueBWueBWSUDOwvNjehhKQEUXXXTRRUtAGmG5pxGWS0BI2f1G2f1MQMdxHMdxHE9A"},"y":["Pune Warriors","Deccan Chargers","Kochi Tuskers Kerala","Gujarat Lions","Punjab Kings","Delhi Capitals","Royal Challengers Bangalore","Sunrisers Hyderabad","Rising Pune Supergiant","Rajasthan Royals","Kolkata Knight Riders","Lucknow Super Giants","Mumbai Indians","Chennai Super Kings","Gujarat Titans"],"type":"bar","xaxis":"x","yaxis":"y"},{"cliponaxis":false,"hovertemplate":"%{x}: %{y} matches\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#f5a623"},"text":{"dtype":"f8","bdata":"AAAAAAAATUAAAAAAAIBMQAAAAAAAAE5AAAAAAABAUkAAAAAAAIBSQAAAAAAAAFNAAAAAAAAATkAAAAAAAIBNQAAAAAAAAE5AAAAAAACATUAAAAAAAABOQAAAAAAAAE5AAAAAAAAATkAAAAAAAABOQAAAAAAAgFJAAAAAAACAUkAAAAAAAMBRQA=="},"textposition":"outside","x":{"dtype":"i4","bdata":"2AcAANkHAADaBwAA2wcAANwHAADdBwAA3gcAAN8HAADgBwAA4QcAAOIHAADjBwAA5AcAAOUHAADmBwAA5wcAAOgHAAA="},"y":{"dtype":"i1","bdata":"Ojk8SUpMPDs8Ozw8PDxKSkc="},"type":"bar","xaxis":"x2","yaxis":"y2"},{"cliponaxis":false,"hovertemplate":"%{y}: %{x:.1f} sixes per match\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#c0392b"},"orientation":"h","text":["11.4","12.3","12.4","12.6","12.7","13.3","13.7","14.1","14.1","14.9"],"textposition":"outside","x":{"dtype":"f8","bdata":"7B1TA3vHJkCrqqqqqqooQBxMkc+6wShA2IIt2IItKUBxww033HApQDuogzqogypAMI+tCBpOK0DHcRzHcRwsQEmSJEmSJCxA39mo72zULUA="},"y":["Rajiv Gandhi International Stadium","Brabourne Stadium","Dr DY Patil Sports Academy","Arun Jaitley Stadium","Eden Gardens","Maharashtra Cricket Association Stadium","Wankhede Stadium","Narendra Modi Stadium","Sharjah Cricket Stadium","M Chinnaswamy Stadium"],"type":"bar","xaxis":"x3","yaxis":"y3"},{"cliponaxis":false,"hovertemplate":"%{x}: %{y:.1f}%\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["#f5a623","#1a6eb5"]},"text":["45.4%  (n=390)","53.9%  (n=700)"],"textposition":"outside","x":["bat","field"],"y":{"dtype":"f8","bdata":"FDuxEzuxRkDctm3btu1KQA=="},"type":"bar","xaxis":"x4","yaxis":"y4"},{"cliponaxis":false,"marker":{"color":"#1a6eb5"},"orientation":"h","text":{"dtype":"f8","bdata":"AAAAAACAQkAAAAAAAABHQAAAAAAAgExAAAAAAACATkAAAAAAAEBTQAAAAAAAQFVAAAAAAACAVkAAAAAAAEBXQAAAAAAAgFdAAAAAAACAXUA="},"textposition":"outside","x":{"dtype":"i1","bdata":"JS45PU1VWl1edg=="},"y":["Dr DY Patil Sports Academy","Dubai International Cricket Stadium","Sawai Mansingh Stadium","Punjab Cricket Association IS Bindra Stadium","Rajiv Gandhi International Stadium","MA Chidambaram Stadium","Arun Jaitley Stadium","Eden Gardens","M Chinnaswamy Stadium","Wankhede Stadium"],"type":"bar","xaxis":"x5","yaxis":"y5"},{"cliponaxis":false,"marker":{"color":"#c0392b"},"orientation":"h","text":["4,843","4,954","4,997","5,181","5,243","5,536","6,567","6,630","6,769","8,014"],"textposition":"outside","x":{"dtype":"i2","bdata":"6xJaE4UTPRR7FKAVpxnmGXEaTh8="},"y":["KD Karthik","RV Uthappa","CH Gayle","AB de Villiers","MS Dhoni","SK Raina","DA Warner","RG Sharma","S Dhawan","V Kohli"],"type":"bar","xaxis":"x6","yaxis":"y6"},{"cliponaxis":false,"marker":{"color":"#0d7c4e"},"orientation":"h","text":{"dtype":"f8","bdata":"AAAAAAAAZEAAAAAAAABlQAAAAAAAQGVAAAAAAADAZUAAAAAAAIBmQAAAAAAAgGZAAAAAAACgZkAAAAAAAOBmQAAAAAAAAGhAAAAAAACgaUA="},"textposition":"outside","x":{"dtype":"i2","bdata":"oACoAKoArgC0ALQAtQC3AMAAzQA="},"y":["RA Jadeja","JJ Bumrah","SL Malinga","A Mishra","SP Narine","R Ashwin","B Kumar","DJ Bravo","PP Chawla","YS Chahal"],"type":"bar","xaxis":"x8","yaxis":"y8"},{"hovertemplate":"%{x}: %{text} (%{y} runs)\u003cextra\u003e\u003c\u002fextra\u003e","insidetextanchor":"start","marker":{"color":"#8e44ad"},"text":["SE Marsh","ML Hayden","SR Tendulkar","CH Gayle","CH Gayle","MEK Hussey","RV Uthappa","DA Warner","V Kohli","DA Warner","KS Williamson","DA Warner","KL Rahul","RD Gaikwad","JC Buttler","Shubman Gill","V Kohli"],"textangle":-90,"textposition":"inside","x":{"dtype":"i2","bdata":"2AfZB9oH2wfcB90H3gffB+AH4QfiB+MH5AflB+YH5wfoBw=="},"y":{"dtype":"i2","bdata":"aAI8AmoCYALdAt0ClAIyAs0DgQLfArQCpAJ7Al8DegPlAg=="},"type":"bar","xaxis":"x7","yaxis":"y7"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,0.43],"range":[0,80]},"yaxis":{"anchor":"x","domain":[0.8025,1.0],"automargin":true},"xaxis2":{"anchor":"y2","domain":[0.5700000000000001,1.0],"dtick":2},"yaxis2":{"anchor":"x2","domain":[0.8025,1.0],"range":[0,90],"automargin":true},"xaxis3":{"anchor":"y3","domain":[0.0,0.43],"range":[0,20]},"yaxis3":{"anchor":"x3","domain":[0.535,0.7325],"automargin":true},"xaxis4":{"anchor":"y4","domain":[0.5700000000000001,1.0]},"yaxis4":{"anchor":"x4","domain":[0.535,0.7325],"title":{"text":"Win %"},"range":[0,70],"automargin":true},"xaxis5":{"anchor":"y5","domain":[0.0,0.43],"range":[0,135]},"yaxis5":{"anchor":"x5","domain":[0.2675,0.465],"automargin":true},"xaxis6":{"anchor":"y6","domain":[0.5700000000000001,1.0],"range":[0,10500]},"yaxis6":{"anchor":"x6","domain":[0.2675,0.465],"automargin":true},"xaxis7":{"anchor":"y7","domain":[0.0,0.43]},"yaxis7":{"anchor":"x7","domain":[0.0,0.1975],"automargin":true},"xaxis8":{"anchor":"y8","domain":[0.5700000000000001,1.0],"range":[0,240]},"yaxis8":{"anchor":"x8","domain":[0.0,0.1975],"automargin":true},"annotations":[{"font":{"size":16},"showarrow":false,"text":"Win % by team (dashed line = 50%)","x":0.215,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Matches per season","x":0.785,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Sixes per match by venue (venues with over 20 matches)","x":0.215,"xanchor":"center","xref":"paper","y":0.7325,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Toss winner win rate by decision (chi-square p = 0.009)","x":0.785,"xanchor":"center","xref":"paper","y":0.7325,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Top 10 venues by matches hosted","x":0.215,"xanchor":"center","xref":"paper","y":0.465,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Top 10 run scorers","x":0.785,"xanchor":"center","xref":"paper","y":0.465,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Top run scorer of each season","x":0.215,"xanchor":"center","xref":"paper","y":0.1975,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Top 10 wicket takers","x":0.785,"xanchor":"center","xref":"paper","y":0.1975,"yanchor":"bottom","yref":"paper"},{"align":"center","showarrow":false,"text":"\u003cspan style=\"font-size:26px\"\u003e\u003cb\u003e1,095\u003c\u002fb\u003e\u003c\u002fspan\u003e\u003cbr\u003ematches","x":0.125,"xref":"paper","y":1.05,"yref":"paper"},{"align":"center","showarrow":false,"text":"\u003cspan style=\"font-size:26px\"\u003e\u003cb\u003e17\u003c\u002fb\u003e\u003c\u002fspan\u003e\u003cbr\u003eseasons","x":0.375,"xref":"paper","y":1.05,"yref":"paper"},{"align":"center","showarrow":false,"text":"\u003cspan style=\"font-size:26px\"\u003e\u003cb\u003e15\u003c\u002fb\u003e\u003c\u002fspan\u003e\u003cbr\u003efranchises","x":0.625,"xref":"paper","y":1.05,"yref":"paper"},{"align":"center","showarrow":false,"text":"\u003cspan style=\"font-size:26px\"\u003e\u003cb\u003e260,920\u003c\u002fb\u003e\u003c\u002fspan\u003e\u003cbr\u003eball-by-ball deliveries","x":0.875,"xref":"paper","y":1.05,"yref":"paper"}],"shapes":[{"line":{"color":"grey","dash":"dash"},"type":"line","x0":50,"x1":50,"xref":"x","y0":0,"y1":1,"yref":"y domain"},{"line":{"color":"grey","dash":"dash"},"type":"line","x0":0,"x1":1,"xref":"x4 domain","y0":50,"y1":50,"yref":"y4"}],"title":{"font":{"size":22},"text":"\u003cb\u003eIPL Data Analysis Dashboard (2008-2024)\u003c\u002fb\u003e","x":0.5,"xanchor":"center","y":0.985},"margin":{"t":190,"b":40,"l":40,"r":40},"font":{"family":"Arial","size":11},"height":1900,"showlegend":false,"paper_bgcolor":"#f9f9f9"},                        {"responsive": true}                    )                };            </script>        </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>IPL Complete Dataset (2008–2024) • Generated via <code>ipl_final.ipynb</code> & Plotly</div>
+    <div>Ready for presentations, portfolio showcase, and deep statistical analysis</div>
+  </div>
+</footer>
+</body>
+</html>
